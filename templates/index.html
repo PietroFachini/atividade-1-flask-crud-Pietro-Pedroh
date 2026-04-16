@@ -7,27 +7,34 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
+    <form method="POST" action="/pecas">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required><br><br>
 
-            <img src="img/gemini_autopeças.png" alt="" id="logo">
+        <label for="descricao">Descrição:</label>
+        <input type="text" id="descricao" name="descricao" required><br><br>
 
-    </header>
-    <h2>Cadastrar Novas Peças</h2>
+        <label for="nome">Veiculo:</label>
+        <input type="text" id="veiculo" name="veiculo" required><br><br>
 
-    <form>
-        <label>Nome:</label>
-        <input type="text" name="nome"><br><br>
+        <label for="preco">Preço:</label>
+        <input type="number" id="preco" name="preco" required><br><br>
 
-        <label>Descrição:</label>
-        <input type="text" name="descrição"><br><br>
+        <button type="submit">Cadastrar</button>
+  </form>
 
-        <label>Veículos Compatíveis:</label>
-        <input type="text" name="veiculo"><br><br>
-
-        <label>Preço:</label>
-        <input type="text" name="preco"><br><br>
-
-        <input type="submit" value="cadastrar">
-        <input type="reset" value="limpar">
+  <hr>
+  
+    <h2>Lista de peças:</h2>
+    <ul>
+        {% for peca in pecas %}
+        <li>
+            {{ peca.nome }} - {{ peca.descricao }} - {{ peca.preco}} - {{peca.veiculo}}
+            [<a href="/remover/{{ peca.id }}"
+                onclick="return confirm('Tem certeza que deseja remover esta peça?')">Remover</a>]
+            [<a href="/editar/{{ peca.id }}">Editar</a>]
+        </li>
+        {% endfor %}
+    </ul>
 </body>
 </html>
