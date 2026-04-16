@@ -11,6 +11,3 @@ Tecnologias utilizadas:
   * Flask
   * HTML5 CSS3
   * Jinja2
-
-Funcionalidade adicional ao que foi pedido:
- * Validador de conflito entre peças já cadastradas
