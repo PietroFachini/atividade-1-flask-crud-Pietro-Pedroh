@@ -1,3 +1,14 @@
-p{
-    color: cadetblue;
+header {
+    height: 160px;
+    display: flex;
+    align-items: center;
+    background-color: lightslategray;
+    width: 100%;
+    justify-content: space-evenly;
 }
+
+#logo{
+    width: 21%;
+    display: flex;
+}
+
