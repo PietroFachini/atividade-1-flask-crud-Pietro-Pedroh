@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar</title>
+</head>
+<body>
+    <form method="POST" action="/atualizar/{{ peca.id }}">
+        Nome:
+        <input type="text" name="nome" value="{{ peca.nome }}">
+        Descrição:
+        <input type="text" name="descricao" value="{{ peca.idade }}">
+        Veiculo:
+        <input type="text" name="veiculo" value="{{ peca.veiculo }}">
+        Preço:
+        <input type="number" name="preco" value="{{peca.preco}}">
+        <button type="submit">Atualizar</button>
+    </form>
+</body>
+</html>
